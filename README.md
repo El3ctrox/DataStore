@@ -20,7 +20,7 @@ A module to manage data stores
   	local isAscending = false
 	local pageSize = 10
 	local pages = DataStore:GetSorted( "MoneyTop", "45653453")
-	local topTen = pages:GetCurrentPage()
+	local topTen, success = pages:GetCurrentPage()
 	
 	for rank,store in ipairs(topTen) do
 		print( "#"..rank, "-", store.key, store.value)
